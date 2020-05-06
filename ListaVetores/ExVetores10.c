@@ -9,6 +9,8 @@ void main() {
     c. o cartão de respostas para cada aluno, contendo o seu número e suas
     respostas.**/
 
+    int prova[30][5]
+
     for(i = 1; i < n; i++){
     }
 }
