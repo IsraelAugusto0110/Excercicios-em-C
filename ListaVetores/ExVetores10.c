@@ -9,8 +9,13 @@ void main() {
     c. o cartão de respostas para cada aluno, contendo o seu número e suas
     respostas.**/
 
-    int prova[30][5]
+    int i;
 
-    for(i = 1; i < n; i++){
+    int g[3], x;/*primeiro criamos um vetor para armazenar as
+                        resposts corretas*/
+
+    for(i = 0; i < 3; i++){
+        printf("Questao %d: ", g[i] + 1);
+        scanf("%d", &x);
     }
 }
