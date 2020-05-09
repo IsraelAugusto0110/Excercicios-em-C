@@ -1,8 +1,8 @@
 # include <stdio.h>
 
 void main() {
-    /*1. Dada uma sequência de n números imprimir na ordem
-    inversa à da leitura.*/
+    /*1. Dada uma sequï¿½ncia de n nï¿½meros imprimir na ordem
+    inversa ï¿½ da leitura.*/
 
     int n, x, i;
 
