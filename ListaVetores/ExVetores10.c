@@ -11,7 +11,7 @@ void main() {
 
     int i;
 
-    int g[3], x;/*primeiro criamos um vetor para armazenar as
+    int g[3][5], x;/*primeiro criamos um vetor para armazenar as
                         resposts corretas*/
 
     for(i = 0; i < 3; i++){
