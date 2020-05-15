@@ -5,7 +5,8 @@ void main(){
     printf("Quantas camadas? ");
     scanf("%d", &n);
 
-    int layers = (2*n) + 1; 
+    int layers = (2*n) + 1; // notei que a quantidade de camadas � 2 * N + 1;
+                            //por exemplo n = 3 temos 7 linhas e 7 colunas
 
     char vetor[layers][layers];
     int i, j;
