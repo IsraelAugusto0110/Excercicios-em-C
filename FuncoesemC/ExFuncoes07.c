@@ -1,6 +1,7 @@
 # include <stdio.h>
 
-int contadigitos(int n);
+//int contadigitos(int n);
+int permuta(int n);
 
 void main() {
     /*Um número a é dito permutação de um número b s
@@ -11,7 +12,8 @@ void main() {
     int x;
     printf("Quantos algarismos? ");
     scanf("%d", &x);
-    contadigitos(x);
+    //contadigitos(x);
+    permuta(x);
 
 }
 
@@ -27,7 +29,6 @@ int contadigitos(int n){
     }
 
     for(i = 0; i < n; i++){
-        printf("Vetor1[%d]: ", i);
         scanf("%d", &z);
         x[i] = z;
     }
@@ -43,4 +44,45 @@ int contadigitos(int n){
 
     printf("%d aparece %d vezes.\n", z, c);
     return c;
+}
+
+
+
+    /*(b) Usando a função do item anterior, faça
+        um programa que lê dois inteiros positivos
+        a e b e responda se a é permutação de b.*/
+int permuta(int n){
+    int x[n], i, j, z[n], c = 0, y;
+    for(i = 0; i < n; i++){
+        x[i] = 0;
+        z[i] = 0;
+    }
+
+    for(i = 0; i < n; i++){
+        printf("Vetor1[%d]: ", i);
+        scanf("%d", &y);
+        x[i] = y;
+    }
+
+    for(i = 0; i < n; i++){
+        printf("Vetor2[%d]: ", i);
+        scanf("%d", &y);
+        z[i] = y;
+    }
+
+    for(i = 0; i < n; i++){
+        for(j = 0; j < n; j++){
+            if(x[j] == z[i]){
+                c++;
+            }
+        }
+    }
+
+    if(c > 0){
+        printf("Permutacao.\n");
+    }else{
+        printf("Nao e permutacao.");
+    }
+
+    return 0;
 }
