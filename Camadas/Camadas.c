@@ -24,7 +24,7 @@ void main(){
             }
             printf("%c ", vetor[i][j]);
         }
-
+        l++;
         printf("\n");
     }
 }
