@@ -23,8 +23,12 @@ void main(){
                 vetor[i][j] = l;
             }
             printf("%c ", vetor[i][j]);
+            if(i == j && i > 0){
+                l++;
+            }else{
+                l = 'A';
+            }
         }
-        l++;
         printf("\n");
     }
 }
