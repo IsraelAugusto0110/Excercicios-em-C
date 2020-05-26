@@ -21,27 +21,18 @@ dois inteiros positivos a e b, verifica se b
 int encaixa(int x, int y){/*x=a e y=b*/
     int i;
     int c;/* que é o comprimento de a - b*/
+    int d = 10;/*dividir sucessivamente por 10 e comparar os valores*/
 
     /*se o comprimento de m for maior que de n entao nao encaixa*/
     if(y > x){
         printf("Nao encaixa!");
     }else{
-        int vx[x], vy[y];
-        /*lemos dois vetores de a e b comprimento*/
-        for(i = 0; i < x; i++){
-            printf("VetorA[%d]: ", i);
-            scanf("%d", &x);
-            vx[i] = x;
+        c = x - y;
+        if(c == y){
+            printf("Encaixa!");
+        }else{
+            printf("Nao encaixa!");
         }
-        for(i = 0; i < y; i++){
-            printf("VetorB[%d]: ", i);
-            scanf("%d", &y);
-            vy[i] = y;
-        }
-
-        /*verificar se os c ultimos de a são iguais aos ultimos de b*/
-
-        printf("Encaixa!");
     }
 
     return 0;
