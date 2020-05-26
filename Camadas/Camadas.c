@@ -7,19 +7,13 @@ void main(){
     char l = 'A';
     char vetor[n][n];
 
-    for(i = 0; i < n; i++){
-        for(j = 0; j < n; j++){
-            vetor[i][j] = l;
-            if(i == 1 && j == 0){
-                l++;
-            }else if(i == n || j == n){
-                l--;
+    for(i = 0; i < 2*n + 1; i++){
+        for(j = 0; j < 2*n + 1; j++){
+            if(i == n && j == n){
+                vetor[i][j] = '*';
+            }else{
+                vetor[i][j] = l;
             }
-        }
-    }
-
-    for(i = 0; i < n; i++){
-        for(j = 0; j < n; j++){
             printf("%c ", vetor[i][j]);
         }
         printf("\n");
