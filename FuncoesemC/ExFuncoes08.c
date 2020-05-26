@@ -4,10 +4,11 @@ int encaixa(int x, int y);
 
 void main() {
     int a, b;
-    printf("A: ");
+    /*primeiro pedimos o quantos digito em cada*/
+    printf("Quantos digitos em A? ");
     scanf("%d", &a);
 
-    printf("B: ");
+    printf("Quantos digitos em B? ");
     scanf("%d", &b);
 
     encaixa(a, b);
@@ -17,44 +18,30 @@ void main() {
 dois inteiros positivos a e b, verifica se b
  corresponde aos últimos dígitos de a.*/
 
-int encaixa(int x, int y){
-    int n[x], m[y], i, f, c = 0;
+int encaixa(int x, int y){/*x=a e y=b*/
+    int i;
+    int c;/* que é o comprimento de a - b*/
+
     /*se o comprimento de m for maior que de n entao nao encaixa*/
     if(y > x){
         printf("Nao encaixa!");
     }else{
-
-        /*preenchemos os vetores com 0*/
+        int vx[x], vy[y];
+        /*lemos dois vetores de a e b comprimento*/
         for(i = 0; i < x; i++){
-            n[i] = 0;
+            printf("VetorA[%d]: ", i);
+            scanf("%d", &x);
+            vx[i] = x;
         }
         for(i = 0; i < y; i++){
-            m[i] = 0;
+            printf("VetorB[%d]: ", i);
+            scanf("%d", &y);
+            vy[i] = y;
         }
 
-        for(i = 0; i < x; i++){
-            printf("A: ");
-            scanf("%d", &f);
-            n[i] = f;
-        }
+        /*verificar se os c ultimos de a são iguais aos ultimos de b*/
 
-        for(i = 0; i < y; i++){
-            printf("B: ");
-            scanf("%d", &f);
-            m[i] = f;
-        }
-
-        for(i = x - y; i <= y; i++){
-            if(m[i] == n[i]){
-                c++;
-            }
-        }
-
-        if(c > 0){
-            printf("Encaixa!");
-        }else{
-            printf("Nao encaixa!");
-        }
+        printf("Encaixa!");
     }
 
     return 0;
