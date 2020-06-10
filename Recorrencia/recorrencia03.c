@@ -16,8 +16,8 @@ void main(){
     do{
         soma = soma + (a/b);
         a *= (-pow(x, 2));
-        b = (i+2) * (i+1) * b;
-        i = i + 2;
+        b = ((2*i) + i) * (2*i) * b;
+        i ++;
     }while(i <= k);
     printf("Sen(%d) = %.1f", x, soma);
 }
