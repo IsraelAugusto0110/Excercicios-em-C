@@ -1,20 +1,26 @@
 #include<stdio.h>
+#define MAX 70
 
 void main(){
-    int x[10], n, i, f, a= 0, b = 1;
+    int T, N, i;
+    unsigned long long int Fibonnacci[MAX];
+    int vetor[MAX];
 
-    scanf("%d", &n);
-
-    for(i = 0; i < n; i++){
-        scanf("%d", &f);
-        x[i] = f;
-        int j, soma = 0;
-        for(j = 1; j < f; j++){
-            soma = a + b;
-            a = b;
-            b = soma;
+    for(i = 0; i <= 60; i++){
+        if(i <= 1){
+            Fibonnacci[i] = i;
+        }else{
+            Fibonnacci[i] = Fibonnacci[i-2] + Fibonnacci[i-1];
         }
-        printf("Fib(%d) = %d\n", x[i], soma);
-        soma = 0;
+    }
+    scanf("%d", &T);
+
+    for(i = 0; i < T; i++){
+        scanf("%d", &N);
+        vetor[i] = N;
+    }
+
+    for(i = 0; i < T; i++){
+        printf("Fib(%d) = %lld\n", vetor[i], Fibonnacci[vetor[i]]);
     }
 }
