@@ -12,6 +12,9 @@ dma y;
 
 dma fim_evento(dma datainicio, int duracao);
 
+int trocames(int mes);
+/*define a quantidade de dias de acordo com o mes, nao considerando anos bissextos*/
+
 void main(){
     int t;
 
@@ -24,15 +27,17 @@ void main(){
 
 dma fim_evento(dma datainicio, int duracao){
     dma datafim;
-    int anos, meses, dias;
+    int anos, meses, dias, qdias;
 
-    anos = duracao/360;//se todos os 12 meses tivessem exatamente 30 dias
-    meses = (duracao%360)/30;
-    dias = (duracao%360)%30;
+    qdias = trocames(datainicio.mes);
 
-    if(datainicio.dia + dias > 30){
+    anos = duracao/365;
+    meses = (duracao%365)/30;
+    dias = (duracao%365)%30;
+
+    if(datainicio.dia + dias > qdias){
         meses += 1;
-        dias = (datainicio.dia + dias) - 30;
+        dias = (datainicio.dia + dias) - qdias;
     }else{
         dias = (datainicio.dia + dias);
     }
@@ -50,3 +55,30 @@ dma fim_evento(dma datainicio, int duracao){
     datafim.ano = anos;
     return datafim;
 };
+
+
+int trocames(int mes){
+    int qdias;
+
+    switch(mes){
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            qdias = 31;
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            qdias = 30;
+            break;
+        case 2:
+            qdias = 28;
+            break;
+    }
+    return qdias;
+}
